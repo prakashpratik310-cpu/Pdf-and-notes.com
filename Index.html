@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Notes Hub</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6fb;
+}
+
+header{
+background:#4a6cf7;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+background:white;
+padding:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:#4a6cf7;
+color:white;
+cursor:pointer;
+}
+
+.container{
+padding:20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:15px;
+margin:10px 0;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.answer{
+display:none;
+margin-top:10px;
+color:#444;
+}
+
+.pdf{
+display:inline-block;
+margin-top:10px;
+background:#28a745;
+padding:10px 15px;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Study Notes Hub</h1>
+<p>Free Notes • Questions • PDFs</p>
+</header>
+
+<nav>
+<button onclick="showSection('math')">Maths</button>
+<button onclick="showSection('science')">Science</button>
+</nav>
+
+<div class="container">
+
+<!-- MATHS SECTION -->
+
+<div id="math">
+
+<h2>100 Important Maths Questions</h2>
+
+<script>
+for(let i=1;i<=100;i++){
+document.write(`
+<div class="card">
+<b>Question ${i}</b><br>
+Solve: ${i} × ${i} = ?
+<br>
+<button onclick="toggleAnswer('a${i}')">Show Answer</button>
+<div class="answer" id="a${i}">
+Answer: ${i*i}
+</div>
+</div>
+`);
+}
+</script>
+
+<a class="pdf" href="notes.pdf" download>Download Maths PDF</a>
+
+</div>
+
+
+<!-- SCIENCE SECTION -->
+
+<div id="science" style="display:none">
+
+<h2>Science Important Topics (Class 1–12)</h2>
+
+<div class="card"><b>Class 1</b><br>Plants, Animals, Our Body</div>
+<div class="card"><b>Class 2</b><br>Living & Non-Living Things</div>
+<div class="card"><b>Class 3</b><br>Human Body, Food, Water</div>
+<div class="card"><b>Class 4</b><br>Plants, Soil, Air</div>
+<div class="card"><b>Class 5</b><br>Solar System, Force</div>
+
+<div class="card"><b>Class 6</b><br>
+Food Sources, Motion, Electricity, Magnets
+</div>
+
+<div class="card"><b>Class 7</b><br>
+Acids & Bases, Respiration, Heat
+</div>
+
+<div class="card"><b>Class 8</b><br>
+Cells, Force & Pressure, Light
+</div>
+
+<div class="card"><b>Class 9</b><br>
+Atoms & Molecules, Motion, Laws of Motion
+</div>
+
+<div class="card"><b>Class 10</b><br>
+Electricity, Chemical Reactions, Light Reflection
+</div>
+
+<div class="card"><b>Class 11</b><br>
+Thermodynamics, Laws of Motion, Cell Biology
+</div>
+
+<div class="card"><b>Class 12</b><br>
+Electrostatics, Organic Chemistry, Genetics
+</div>
+
+<a class="pdf" href="science_notes.pdf" download>
+Download Science Notes PDF
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleAnswer(id){
+let a=document.getElementById(id);
+a.style.display = a.style.display==="block" ? "none" : "block";
+}
+
+function showSection(section){
+document.getElementById("math").style.display="none";
+document.getElementById("science").style.display="none";
+document.getElementById(section).style.display="block";
+}
+
+</script>
+
+</body>
+                                  </html>
